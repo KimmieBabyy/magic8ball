@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Magic 8 Ball</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+    .ball {
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle at 35% 25%, #555, #000 60%);
+      border-radius: 50%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px purple;
+    }
+    .answer {
+      width: 150px;
+      height: 150px;
+      background: #24104f;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-size: 18px;
+    }
+    button {
+      margin-top: 35px;
+      font-size: 22px;
+      padding: 15px 30px;
+      border-radius: 20px;
+      border: none;
+      background: purple;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ask a Question...</h1>
+
+<div class="ball">
+  <div class="answer" id="answer">Tap Reveal</div>
+</div>
+
+<button onclick="reveal()">Reveal Answer</button>
+
+<script>
+const answers = [
+  "Yes",
+  "No",
+  "Maybe",
+  "Ask again later",
+  "Without a doubt",
+  "Absolutely not",
+  "Signs point to yes",
+  "Very likely",
+  "Not today",
+  "Try again tomorrow",
+  "The vibes say yes",
+  "The universe says no",
+  "Probably",
+  "Don't count on it",
+  "100% yes"
+];
+
+function reveal() {
+  const random = Math.floor(Math.random() * answers.length);
+  document.getElementById("answer").innerText = answers[random];
+}
+</script>
+
+</body>
+</html>
